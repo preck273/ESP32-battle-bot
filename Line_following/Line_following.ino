@@ -9,10 +9,8 @@
 #include <sstream>
 
 //WI-FI
-//const char* ssid = "Spott";
-//const char* pass = "Spott@2020!";
-const char* ssid = "Michiel de Router";
-const char* pass = "k3qDwsqfjkhr";
+const char* ssid = "Sambal";
+const char* pass = "";
 
 //set web server
 WiFiServer server (80); 
@@ -33,8 +31,8 @@ Adafruit_VL53L0X lox = Adafruit_VL53L0X();
 #define LF 16
 #define LB 17
 
-//left Sensor(LSP) on analogPin 34
-//right Sensor(RSP) on analogPin 39
+//left Sensor pin(LSP) on analogPin 34
+//right Sensor pin(RSP) on analogPin 39
 int LSP = 34;
 int RSP = 39;
 
@@ -110,10 +108,9 @@ void loop() {
        
        payloadInt= payload.toInt();
        payload = http.getString();
-       Serial.println("hTTP CODE IS BELOW");
+       //Serial.println("hTTP CODE IS BELOW");
        Serial.println(httpCode);
-      
-       Serial.println("payload IS BELOW");
+       //Serial.println("payload IS BELOW");
        Serial.println(payload);
     }
     else 
@@ -142,16 +139,6 @@ void loop() {
     }
      //lineFollowing();
 }//end of loop
-
-//motor movement
-//void stopMotor() {
-//  analogWrite(RF, 0);
-//  analogWrite(LF, 0);
-//  analogWrite(RB, 0);
-//  analogWrite(LB, 0);
-//  display.println("Stop");
-//  display.display();
-//}
 
 void stopMotor() {
   digitalWrite(RF, LOW);
@@ -202,7 +189,8 @@ void backward() {
 
 //first task, follow the black line
   void lineFollowing(){
-    
+
+    //Read sensor data and store it
       int leftSensor = digitalRead(LSP);
       int RightSensor = digitalRead(RSP);
       
