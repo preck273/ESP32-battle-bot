@@ -1,0 +1,38 @@
+
+body{
+    min-height: 100vh;
+    background: #111;
+}
+
+h1{
+    color: white;
+}
+
+
+.container{  
+    text-align: center;  
+    width: 300px;  
+    height: 300px;  
+    padding-top: 100px; 
+    margin: auto; 
+    } 
+
+    #btn{  
+    font-size: 25px;  
+    background: #222;
+    width: 160px;
+    height: 70px;
+    margin: 15px 10px;
+    color:#fff ;
+    transition: 0.5s;
+    }  
+
+    btn::before{
+        content: '';
+        top: 0;
+        left:0;
+        width:4px;
+        height:100px;
+        background: #00fe73;
+        transition: 0.5s ease-in-out;
+    }
