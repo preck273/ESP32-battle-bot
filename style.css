@@ -1,11 +1,11 @@
 
 body{
     min-height: 100vh;
-    background: #111;
+    background: rgb(225, 225, 225);
 }
 
 h1{
-    color: white;
+    color: #222;
 }
 
 
@@ -18,21 +18,24 @@ h1{
     } 
 
     #btn{  
-    font-size: 25px;  
-    background: #222;
-    width: 160px;
-    height: 70px;
-    margin: 15px 10px;
-    color:#fff ;
-    transition: 0.5s;
+        padding: 15px 25px;
+        font-size: 24px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background-color: #04AA6D;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
     }  
 
-    btn::before{
-        content: '';
-        top: 0;
-        left:0;
-        width:4px;
-        height:100px;
-        background: #00fe73;
-        transition: 0.5s ease-in-out;
+    #btn:hover{
+        background-color: #337235
     }
+
+    #btn:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
