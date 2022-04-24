@@ -6,10 +6,9 @@ $password = "jEN&Uhq7p2YA#H(a";
 $dbname = "id18719794_battlebot";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-if ($conn) {
 
-} else if (!$conn) {
-    echo "error";
+if (!$conn) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
 if (isset($_POST['submit'])) {
@@ -44,7 +43,39 @@ if (isset($_POST['submit'])) {
             <button type="submit" id="btn" name = "submit" value = "2" >Pre-defined route</button> <br><br>
             <button type="submit" id="btn" name = "submit" value = "3" >Stop</button> 
         </form>
-    </div>
-        
+    </div> <br> <br>
+    <?php
+        if (isset($_POST['submit'])) {
+            $sql = "SELECT command FROM `task` WHERE id = 1";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                
+                while($row = $result->fetch_assoc()) {
+                    echo '<div id="command">'. $row["command"] . "<br> Current Task: ";
+
+                    switch($row["command"]) {
+                        case 1:
+                            echo "Line following";
+                            break;
+                        case 2:
+                            echo "Pre-defined route";
+                            break;
+                        case 3:
+                            echo "Stop";
+                            break;
+                        default:
+                            echo "No command";
+                            break;    
+                    }
+                }
+                echo "</div>";
+            } else {
+                echo "0 results";
+            }
+        }
+
+        $conn->close();
+    ?>
 </body>
 </html>

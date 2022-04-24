@@ -15,9 +15,9 @@ h1{
     height: 300px;  
     padding-top: 100px; 
     margin: auto; 
-    } 
+} 
 
-    #btn{  
+ #btn{  
         padding: 15px 25px;
         font-size: 24px;
         text-align: center;
@@ -28,14 +28,20 @@ h1{
         border: none;
         border-radius: 15px;
         box-shadow: 0 9px #999;
-    }  
+}  
 
-    #btn:hover{
+#btn:hover{
         background-color: #337235
-    }
+}
 
-    #btn:active {
+#btn:active {
         background-color: #3e8e41;
         box-shadow: 0 5px #666;
         transform: translateY(4px);
-      }
+}
+
+#command {
+    text-align: center;
+    font-size: 24px;
+    color: #222;
+}
