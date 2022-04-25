@@ -1,4 +1,6 @@
+
 <?php
+//The robot gets the command from this file.....link  "https://battlebot.000webhostapp.com/api.php"
         $servername = "localhost";
         $username = "id18719794_bot123";
         $password = "jEN&Uhq7p2YA#H(a";
@@ -35,7 +37,6 @@
             mysqli_stmt_close($statement);
 
              mysqli_close($conn);
-
         }
 
     

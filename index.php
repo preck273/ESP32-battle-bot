@@ -10,7 +10,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . $conn->connect_error);
 }
-
+//update any value submitted to the command table in the database e.g 1, 2 or 3
 if (isset($_POST['submit'])) {
     $value = $_POST['submit'];
     $sql = "UPDATE `task` SET command =" . $value . " WHERE id = 1";
@@ -23,7 +23,8 @@ if (isset($_POST['submit'])) {
     }  
 } 
 
-
+//Link to this webPage: https://battlebot.000webhostapp.com/ 
+// I used a free web Hosting server...link https://www.000webhost.com/
 ?>
 
 <!DOCTYPE html>
@@ -45,6 +46,8 @@ if (isset($_POST['submit'])) {
         </form>
     </div> <br> <br>
     <?php
+    //Display the information that has been sent from the robot to the server
+    //get the current value from the command table in the database and display it on the webPage
         if (isset($_POST['submit'])) {
             $sql = "SELECT command FROM `task` WHERE id = 1";
             $result = $conn->query($sql);
